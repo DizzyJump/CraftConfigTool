@@ -63,6 +63,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CraftEngine\CraftEngine.cs" />
     <Compile Include="Assets\Scripts\CraftEngine\CraftItem.cs" />
+    <Compile Include="Assets\Scripts\Events\EventHandler.cs" />
+    <Compile Include="Assets\Scripts\Events\EventObject.cs" />
+    <Compile Include="Assets\Scripts\ScrollViewHotkeys\ScrollViewHotkeys.cs" />
+    <Compile Include="Assets\Scripts\Tests\Test.cs" />
     <None Include="Assets\UI - BUILDER\Source Files\Fonts\OpenSans-Familiy\OpenSansLic.txt" />
     <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="UnityEditor.StandardEvents">
