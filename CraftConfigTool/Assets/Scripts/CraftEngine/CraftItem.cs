@@ -63,7 +63,4 @@ public class CraftItem {
     public ItemDescriptors Descriptors = new ItemDescriptors();
     [JsonProperty("craft_costs")]
     public Dictionary<string, int> CraftCosts = new Dictionary<string, int>();
-
-    [JsonIgnore]
-    public int Deepness = 0;
 }

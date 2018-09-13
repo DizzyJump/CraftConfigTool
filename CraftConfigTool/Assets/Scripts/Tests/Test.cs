@@ -18,6 +18,15 @@ public class Test : MonoBehaviour {
     [Button]
     void TestSerialize()
     {
+        SetTestGraph();
+        string json = engine.Serialize();
+        Debug.Log(json);
+        engine.Clear();
+    }
+
+    [Button]
+    void SetTestGraph()
+    {
         engine.Clear();
         string test_id = "test_id";
         string test_resource_id_1 = "test_resource_1";
@@ -33,9 +42,8 @@ public class Test : MonoBehaviour {
         engine.SetCraftCost(test_id, test_resource_id_2, 20);
         engine.SetCraftCost(test_id, test_resource_id_3, 30);
 
+        engine.SetCraftCost(test_resource_id_1, test_resource_id_2, 5);
+
         item.Descriptors.ChooseToCraft = new ChooseToCraftItemDescriptors();
-        string json = engine.Serialize();
-        Debug.Log(json);
-        engine.Clear();
     }
 }
