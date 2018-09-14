@@ -77,7 +77,7 @@ public class CraftEngine : ScriptableObject {
 
     public void SetCraftCost(string item_id, string cost_id, int count)
     {
-        if(ContainsItem(item_id) && ContainsItem(cost_id))
+        if(ContainsItem(item_id) && ContainsItem(cost_id) && item_id != cost_id)
         {
             var WorkItem = GetItem(item_id);
             WorkItem.CraftCosts[cost_id] = count;
@@ -191,5 +191,24 @@ public class CraftEngine : ScriptableObject {
             config.Items = new List<CraftItem>();
         }
         return result;
+    }
+
+    public void ChangeItemID(string old_id, string new_id)
+    {
+        var item = GetItem(old_id);
+        item.ItemTypeId = new_id;
+        id_map.Remove(old_id);
+        id_map.Add(new_id, item);
+        for(int item_index = 0; item_index<config.Items.Count; item_index++)
+        {
+            var WorkItem = config.Items[item_index];
+            if(WorkItem.CraftCosts.ContainsKey(old_id))
+            {
+                int value = WorkItem.CraftCosts[old_id];
+                WorkItem.CraftCosts.Remove(old_id);
+                WorkItem.CraftCosts.Add(new_id, value);
+            }
+        }
+        UpdateCaches();
     }
 }

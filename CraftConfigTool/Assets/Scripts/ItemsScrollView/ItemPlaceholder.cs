@@ -28,6 +28,7 @@ public class ItemPlaceholder : MonoBehaviour {
         if(layout == null)
             layout = GetComponent<LayoutElement>();
         ID = id;
+        transform.localScale = Vector3.one;
         transform.SetParent(column_transform);
         WorkItem = ItemsCache.Get(ID);
         WorkItem.SetAnchor(transform);

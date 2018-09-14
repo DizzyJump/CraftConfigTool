@@ -63,4 +63,6 @@ public class CraftItem {
     public ItemDescriptors Descriptors = new ItemDescriptors();
     [JsonProperty("craft_costs")]
     public Dictionary<string, int> CraftCosts = new Dictionary<string, int>();
+    [JsonProperty("icon_id")]
+    public string IconName="";
 }

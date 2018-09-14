@@ -19,6 +19,7 @@ public class ItemsCache : ScriptableObject {
         var parent = GameObject.FindGameObjectWithTag("ItemsParent");
         var item = Instantiate(ItemPrefab);
         item.transform.SetParent(parent.transform);
+        item.transform.localScale = Vector3.one;
         item.transform.position = Vector3.zero;
         item.SetItem(id);
         Cache.Add(id, item);
@@ -35,5 +36,12 @@ public class ItemsCache : ScriptableObject {
         if(!Cache.ContainsKey(id))
             Create(id);
         return Cache[id];
+    }
+
+    public void ChangeItemID(string old_id, string new_id)
+    {
+        var item = Cache[old_id];
+        Cache.Remove(old_id);
+        Cache.Add(new_id, item);
     }
 }

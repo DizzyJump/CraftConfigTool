@@ -24,9 +24,9 @@ public class LoadButton : MonoBehaviour {
         if(path!="")
         {
             json = File.ReadAllText(path);
-            Debug.Log(json);
-            //if(json != "")
-            //    engine.Deserialize(json);
+            //Debug.Log(json);
+            if(json != "")
+                engine.Deserialize(json);
         }
         
     }

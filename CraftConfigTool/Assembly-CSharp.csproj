@@ -66,15 +66,20 @@
     <Compile Include="Assets\Scripts\Events\EventHandler.cs" />
     <Compile Include="Assets\Scripts\Events\EventObject.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\Column.cs" />
+    <Compile Include="Assets\Scripts\ItemsScrollView\IconSet.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ItemInfo.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ItemPlaceholder.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ItemsCache.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ItemsTable.cs" />
+    <Compile Include="Assets\Scripts\ItemsScrollView\ResourceCellDescriptor.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ScrollViewHotkeys.cs" />
     <Compile Include="Assets\Scripts\Tests\Test.cs" />
-    <Compile Include="Assets\Scripts\UiControls\AddItemButton.cs" />
+    <Compile Include="Assets\Scripts\UiControls\ChooseIconPanel.cs" />
+    <Compile Include="Assets\Scripts\UiControls\CreateItemPanel.cs" />
+    <Compile Include="Assets\Scripts\UiControls\ErrorMessage.cs" />
     <Compile Include="Assets\Scripts\UiControls\LoadButton.cs" />
-    <Compile Include="Assets\Scripts\UiControls\SaveButton.cs" />
+    <Compile Include="Assets\Scripts\UiControls\MessagePanel.cs" />
+    <Compile Include="Assets\Scripts\UiControls\SavePanel.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\UI - BUILDER\Source Files\Fonts\OpenSans-Familiy\OpenSansLic.txt" />
@@ -304,6 +309,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/Plugins/crosstales/FileBrowser/Native/Windows/Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/Plugins/crosstales/FileBrowser/Native/Windows/System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
       <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
@@ -327,12 +338,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/s_stolnikov/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Ookii.Dialogs">
-      <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/Plugins/crosstales/FileBrowser/Native/Windows/Ookii.Dialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>E:/Protos/CraftConfigTool/CraftConfigTool/Assets/Plugins/crosstales/FileBrowser/Native/Windows/System.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

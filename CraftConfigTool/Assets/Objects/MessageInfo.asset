@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b312b96ba3058e4697cd4f63e1db8e1, type: 3}
+  m_Name: MessageInfo
+  m_EditorClassIdentifier: 
+  Title: 
+  Message: 
+  ShowMessageEvent: {fileID: 11400000, guid: ce6b3e67292d932439da6e7204578e22, type: 2}

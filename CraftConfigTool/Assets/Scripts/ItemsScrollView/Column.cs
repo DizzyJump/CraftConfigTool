@@ -42,6 +42,7 @@ public class Column : MonoBehaviour {
                     else
                     {
                         var new_item = Instantiate(ItemCellPrefab);
+                        new_item.localScale = Vector3.one;
                         ColumnItems.Add(new_item.GetComponent<ItemPlaceholder>());
                     }
                 }
