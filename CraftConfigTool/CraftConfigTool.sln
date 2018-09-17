@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftConfigTool", "Assembly-CSharp-firstpass.csproj", "{E814384C-600B-265B-D91E-E44AA61D0E7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{E814384C-600B-265B-D91E-E44AA61D0E7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftConfigTool", "Assembly-CSharp.csproj", "{2B9E6D7F-54A6-707B-A082-24B3200AF07E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2B9E6D7F-54A6-707B-A082-24B3200AF07E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftConfigTool", "Assembly-CSharp-Editor-firstpass.csproj", "{BEB98968-DDC9-6C12-A2FB-3ECDA08AE8CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{BEB98968-DDC9-6C12-A2FB-3ECDA08AE8CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -22,6 +22,8 @@ public class CraftEngine : ScriptableObject {
     private Dictionary<int, List<CraftItem>> LevelsCache = new Dictionary<int, List<CraftItem>>();
     int GraphDeepness = 0;
 
+    public EventObject UpdateViewEvent;
+
     public void Clear()
     {
         config = new craft_system_config();
@@ -72,17 +74,32 @@ public class CraftEngine : ScriptableObject {
                 WorkItem.CraftCosts.Remove(id);
             }
             UpdateCaches();
+            UpdateViewEvent.Invoke();
         }
     }
 
     public void SetCraftCost(string item_id, string cost_id, int count)
     {
-        if(ContainsItem(item_id) && ContainsItem(cost_id) && item_id != cost_id)
+        if(ContainsItem(item_id) && ContainsItem(cost_id) && item_id != cost_id && !isHaveResourceCycle(item_id, cost_id))
         {
             var WorkItem = GetItem(item_id);
             WorkItem.CraftCosts[cost_id] = count;
             UpdateCaches();
+            UpdateViewEvent.Invoke();
         }
+    }
+
+    public bool isHaveResourceCycle(string search_item_id, string check_item_id)
+    {
+        var Item = GetItem(check_item_id);
+        foreach(var res in Item.CraftCosts)
+        {
+            if(res.Key == search_item_id)
+                return true;
+            else
+                return isHaveResourceCycle(search_item_id, res.Key);
+        }
+        return false;
     }
 
     public void RemoveCraftCost(string item_id, string cost_id)
@@ -92,6 +109,7 @@ public class CraftEngine : ScriptableObject {
             var WorkItem = GetItem(item_id);
             WorkItem.CraftCosts.Remove(cost_id);
             UpdateCaches();
+            UpdateViewEvent.Invoke();
         }
     }
 
@@ -185,6 +203,7 @@ public class CraftEngine : ScriptableObject {
                 id_map.Add(WorkItem.ItemTypeId, WorkItem);
             }
             result = true;
+            UpdateViewEvent.Invoke();
         }
         catch(Exception ex)
         {
@@ -210,5 +229,6 @@ public class CraftEngine : ScriptableObject {
             }
         }
         UpdateCaches();
+        UpdateViewEvent.Invoke();
     }
 }

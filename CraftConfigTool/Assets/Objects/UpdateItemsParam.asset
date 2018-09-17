@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e13c1013478869348b94df5e837b1f6e, type: 3}
-  m_Name: CraftEngine
+  m_Script: {fileID: 11500000, guid: 4cce27e0621dad1439b296df1172733c, type: 3}
+  m_Name: UpdateItemsParam
   m_EditorClassIdentifier: 
-  UpdateViewEvent: {fileID: 11400000, guid: cfb0fb4eff61a6d40a5ea93905036d62, type: 2}
+  Description: 

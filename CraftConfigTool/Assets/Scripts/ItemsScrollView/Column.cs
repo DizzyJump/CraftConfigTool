@@ -6,7 +6,7 @@ public class Column : MonoBehaviour {
     public int Level = 0;
     public Transform ItemCellPrefab;
     public CraftEngine engine;
-    static List<ItemPlaceholder> FreeItems = new List<ItemPlaceholder>();
+    List<ItemPlaceholder> FreeItems = new List<ItemPlaceholder>();
     List<ItemPlaceholder> ColumnItems = new List<ItemPlaceholder>();
     // Use this for initialization
     void Start () {

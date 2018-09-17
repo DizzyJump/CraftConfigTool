@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChooseIconPanel : MonoBehaviour {
+    public delegate void ApplyChooseDelegate(string name);
     public IconSet Icons;
     public Transform ChooseButtonPrefab;
     public Transform GridTransform;
-	// Use this for initialization
-	void Start () {
+    public GameObject WindowRoot;
+    string ChosenSpriteName;
+    public ChooseIconInfo info;
+    // Use this for initialization
+    void Start () {
 		for(int i=0; i<Icons.sprites.Length; i++)
         {
             Sprite WorkSprite = Icons.sprites[i];
@@ -25,8 +29,22 @@ public class ChooseIconPanel : MonoBehaviour {
 		
 	}
 
+    private void OnEnable()
+    {
+        ChosenSpriteName = info.DefaultName;
+    }
+
+    private void OnDisable()
+    {
+        if(info.Callback != null)
+            info.Callback(ChosenSpriteName);
+        else
+            Debug.LogError("Callback doent set in ChooseIconPanel!");
+    }
+
     void ApplyChoose(string name)
     {
-        Debug.Log("Chosen one: "+name);
+        ChosenSpriteName = name;
+        WindowRoot.SetActive(false);
     }
 }

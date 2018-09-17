@@ -32,6 +32,7 @@ public class ItemPlaceholder : MonoBehaviour {
         transform.SetParent(column_transform);
         WorkItem = ItemsCache.Get(ID);
         WorkItem.SetAnchor(transform);
+        WorkItem.UpdateView();
     }
 
     public void Hide()

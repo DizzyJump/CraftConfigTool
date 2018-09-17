@@ -22,7 +22,7 @@ public class ItemsTable : MonoBehaviour {
         }
 	}
 
-    void RebuildColumns()
+    public void RebuildColumns()
     {
         engine.UpdateCaches();
         int CurrentDeepness = engine.GetCraftGraphDeepness();
@@ -45,7 +45,8 @@ public class ItemsTable : MonoBehaviour {
                 col.Show();
             }
         }
-        for(int i = 0; i < Columns.Count; i++)
+        CurrentActiveColumns = CurrentDeepness;
+        for(int i = 0; i < CurrentDeepness; i++)
             Columns[i].Rebuild();
     }
 }
