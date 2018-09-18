@@ -1,0 +1,64 @@
+{
+  "config_name": "test_cfg",
+  "serialized_at": "2018-09-17T08:22:50.8608181Z",
+  "items_list": [
+    {
+      "item_id": "test_id",
+      "craft_time": 5.0,
+      "descriptors": {
+        "unique": null,
+        "prize_bone_discount": null,
+        "prize_tank_open": null,
+        "tank_upgrade": null,
+        "choose_to_craft": {}
+      },
+      "craft_costs": {
+        "test_resource_1": 10,
+        "test_resource_2": 20,
+        "test_resource_3": 30
+      },
+      "icon_id": "145_b"
+    },
+    {
+      "item_id": "test_resource_1",
+      "craft_time": 0.0,
+      "descriptors": {
+        "unique": null,
+        "prize_bone_discount": null,
+        "prize_tank_open": null,
+        "tank_upgrade": null,
+        "choose_to_craft": null
+      },
+      "craft_costs": {
+        "test_resource_2": 5
+      },
+      "icon_id": "17_b"
+    },
+    {
+      "item_id": "test_resource_2",
+      "craft_time": 0.0,
+      "descriptors": {
+        "unique": null,
+        "prize_bone_discount": null,
+        "prize_tank_open": null,
+        "tank_upgrade": null,
+        "choose_to_craft": null
+      },
+      "craft_costs": {},
+      "icon_id": "08_b"
+    },
+    {
+      "item_id": "test_resource_3",
+      "craft_time": 0.0,
+      "descriptors": {
+        "unique": null,
+        "prize_bone_discount": null,
+        "prize_tank_open": null,
+        "tank_upgrade": null,
+        "choose_to_craft": null
+      },
+      "craft_costs": {},
+      "icon_id": "129_b"
+    }
+  ]
+}

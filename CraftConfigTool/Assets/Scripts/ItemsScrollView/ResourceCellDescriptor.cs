@@ -22,10 +22,13 @@ public class ResourceCellDescriptor : MonoBehaviour {
 
     void SetupEx(string item_id, string res_id, Sprite sprite, string value, UnityAction action_on_delete)
     {
-        DeleteButton.onClick.RemoveAllListeners();
-        DeleteButton.onClick.AddListener(action_on_delete);
-        IconButton.onClick.RemoveAllListeners();
-        IconButton.onClick.AddListener(() => { AddResourcePanel.Open(item_id, res_id); });
+        if(action_on_delete==null)
+        {
+            DeleteButton.onClick.RemoveAllListeners();
+            DeleteButton.onClick.AddListener(action_on_delete);
+            IconButton.onClick.RemoveAllListeners();
+            IconButton.onClick.AddListener(() => { AddResourcePanel.Open(item_id, res_id); });
+        }
         Icon.sprite = sprite;
         Value.text = value;
     }

@@ -20,6 +20,7 @@ public class CraftEngine : ScriptableObject {
     private Dictionary<string, CraftItem> id_map = new Dictionary<string, CraftItem>(); // пока так, если будет тормозить заменю на цифровой индекс
     private Dictionary<string, int> DeepnessCache = new Dictionary<string, int>();
     private Dictionary<int, List<CraftItem>> LevelsCache = new Dictionary<int, List<CraftItem>>();
+    private List<string> ResourcesCache = new List<string>();
     int GraphDeepness = 0;
 
     public EventObject UpdateViewEvent;
@@ -123,10 +124,19 @@ public class CraftEngine : ScriptableObject {
         return json;
     }
 
+    public List<string> GetItemsList()
+    {
+        List<string> list = new List<string>();
+        for(int i = 0; i < config.Items.Count; i++)
+            list.Add(config.Items[i].ItemTypeId);
+        return list;
+    }
+
     public void UpdateCaches()
     {
         UpdateIdMapCache();
         UpdateDeepnessCache();
+        UpdateResourcesCache();
     }
 
     void UpdateIdMapCache()
@@ -137,6 +147,19 @@ public class CraftEngine : ScriptableObject {
             CraftItem craftItem = config.Items[i];
             id_map.Add(craftItem.ItemTypeId, craftItem);
         }
+    }
+
+    void UpdateResourcesCache()
+    {
+        ResourcesCache.Clear();
+        for(int i = 0; i < config.Items.Count; i++)
+            if(config.Items[i].CraftCosts.Count == 0)
+                ResourcesCache.Add(config.Items[i].ItemTypeId);
+    }
+
+    public List<string> GetResourcesList()
+    {
+        return ResourcesCache;
     }
 
     void UpdateDeepnessCache()
@@ -196,12 +219,7 @@ public class CraftEngine : ScriptableObject {
         try
         {
             config = JsonConvert.DeserializeObject<craft_system_config>(json, settings);
-            id_map = new Dictionary<string, CraftItem>();
-            for(int i=0; i<config.Items.Count; i++) // rebuild id->obj cache
-            {
-                var WorkItem = config.Items[i];
-                id_map.Add(WorkItem.ItemTypeId, WorkItem);
-            }
+            UpdateCaches();
             result = true;
             UpdateViewEvent.Invoke();
         }
