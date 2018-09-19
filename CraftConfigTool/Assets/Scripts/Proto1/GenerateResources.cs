@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Crosstales.FB;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +18,7 @@ public class GenerateResources : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         StartCoroutine(GenerateWorker());
-        var textFile = Resources.Load<TextAsset>("json/proto_config");
-        engine.Deserialize(textFile.text);
+        
         var item_list = engine.GetItemsList();
         for(int i=0; i<item_list.Count; i++)
         {

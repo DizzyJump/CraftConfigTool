@@ -75,10 +75,14 @@
     <Compile Include="Assets\Scripts\ItemsScrollView\ResourceCellDescriptor.cs" />
     <Compile Include="Assets\Scripts\ItemsScrollView\ScrollViewHotkeys.cs" />
     <Compile Include="Assets\Scripts\Proto1\BuildBox.cs" />
+    <Compile Include="Assets\Scripts\Proto1\BuildPipeline.cs" />
+    <Compile Include="Assets\Scripts\Proto1\BuildPipelineCell.cs" />
+    <Compile Include="Assets\Scripts\Proto1\ButtonMarker.cs" />
     <Compile Include="Assets\Scripts\Proto1\GenerateResources.cs" />
     <Compile Include="Assets\Scripts\Proto1\InventoryData.cs" />
     <Compile Include="Assets\Scripts\Proto1\InventoryResourceIcon.cs" />
     <Compile Include="Assets\Scripts\Proto1\InventoryView.cs" />
+    <Compile Include="Assets\Scripts\Proto1\ProtoDirector.cs" />
     <Compile Include="Assets\Scripts\Proto1\ResourceIconContorller.cs" />
     <Compile Include="Assets\Scripts\Tests\Test.cs" />
     <Compile Include="Assets\Scripts\UiControls\AddResourcePanel.cs" />

@@ -11,12 +11,24 @@ public class InventoryResourceIcon : MonoBehaviour {
     public TextMeshProUGUI Value;
     public CraftEngine engine;
     public IconSet icon_set;
+    public Image BuildableMarker;
+    public Image ResourcesEnoughtMarker;
+    public Image CanBeBuildMarker;
+    public InventoryData Inventory;
 
-    public void Setup(string res_id, string value, Color value_color, UnityAction action)
+    public void Setup(string res_id, string value, Color value_color, UnityAction action, bool res_enougth)
     {
         var item = engine.GetItem(res_id);
         var sprite = icon_set.Get(item.IconName);
-        SetupEx(res_id, sprite, value, value_color, action);
+        BuildableMarker.enabled = item.CraftCosts.Count > 0;
+        ResourcesEnoughtMarker.enabled = res_enougth;
+        CanBeBuildMarker.enabled = !res_enougth && CanBeBuild(item);
+        SetupEx(res_id, sprite, value, value_color, item.CraftCosts.Count>0 ? action : null);
+    }
+
+    bool CanBeBuild(CraftItem item)
+    {
+        return Inventory.CanBeBuild(item);
     }
 
     void SetupEx(string res_id, Sprite sprite, string value, Color value_color, UnityAction action)

@@ -15,7 +15,12 @@ public class InventoryView : MonoBehaviour {
 
     private void OnEnable()
     {
-        while(cells.Count<Inventory.inventory.Count)
+        UpdateView();
+    }
+
+    public void UpdateView()
+    {
+        while(cells.Count < Inventory.inventory.Count)
         {
             var cell = Instantiate(ResourceItemPrefab, transform);
             cell.localScale = Vector3.one;
@@ -24,7 +29,7 @@ public class InventoryView : MonoBehaviour {
         int i = 0;
         foreach(var item in Inventory.inventory)
         {
-            cells[i].Setup(item.Key, item.Value.ToString(), Color.white, ()=> { build_window.Setup(item.Key); });
+            cells[i].Setup(item.Key, item.Value.ToString(), Color.white, () => { build_window.Setup(item.Key); }, false);
             i++;
         }
     }

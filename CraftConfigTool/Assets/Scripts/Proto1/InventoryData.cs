@@ -13,4 +13,17 @@ public class InventoryData : ScriptableObject {
         else
             inventory[res] += count;
     }
+
+    public void Spend(string res, int count)
+    {
+        inventory[res] -= count;
+    }
+
+    public bool CanBeBuild(CraftItem item)
+    {
+        bool result = item.CraftCosts.Count > 0;
+        foreach(var res in item.CraftCosts)
+            result = result && inventory[res.Key] >= res.Value;
+        return result;
+    }
 }

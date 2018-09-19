@@ -66,9 +66,7 @@
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\BaseConstants.cs" />
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\BaseHelper.cs" />
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\CTPlayerPrefs.cs" />
-    <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\CTWebClient.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\CTWebClient.cs" />
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\PlatformController.cs" />
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\RandomColor.cs" />
     <Compile Include="Assets\Plugins\crosstales\Common\Scripts\Util\RandomRotator.cs" />
