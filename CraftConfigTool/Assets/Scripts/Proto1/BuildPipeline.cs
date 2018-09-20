@@ -11,6 +11,7 @@ public class BuildPipeline : MonoBehaviour {
     public float SpeedIncrementStep;
     int Slots = 1;
     List<BuildPipelineCell> finish_list = new List<BuildPipelineCell>();
+    public WelcomePanel welcome;
 
     public InventoryView InvView;
     public BuildBox BuildArea;
@@ -40,6 +41,7 @@ public class BuildPipeline : MonoBehaviour {
         while(finish_list.Count>0)
         {
             BuildPipelineCell finished_cell = finish_list[0];
+            welcome.AddBuild(finished_cell.ID, 1);
             Inventory.Add(finished_cell.ID, 1);
             pipeline.Remove(finished_cell);
             finish_list.RemoveAt(0);

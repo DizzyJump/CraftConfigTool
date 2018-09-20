@@ -16,13 +16,13 @@ public class InventoryResourceIcon : MonoBehaviour {
     public Image CanBeBuildMarker;
     public InventoryData Inventory;
 
-    public void Setup(string res_id, string value, Color value_color, UnityAction action, bool res_enougth)
+    public void Setup(string res_id, string value, Color value_color, UnityAction action, bool res_enougth, bool draw_markers=true)
     {
         var item = engine.GetItem(res_id);
         var sprite = icon_set.Get(item.IconName);
-        BuildableMarker.enabled = item.CraftCosts.Count > 0;
-        ResourcesEnoughtMarker.enabled = res_enougth;
-        CanBeBuildMarker.enabled = !res_enougth && CanBeBuild(item);
+        BuildableMarker.enabled = draw_markers && item.CraftCosts.Count > 0;
+        ResourcesEnoughtMarker.enabled = draw_markers && res_enougth;
+        CanBeBuildMarker.enabled = draw_markers && !res_enougth && CanBeBuild(item);
         SetupEx(res_id, sprite, value, value_color, item.CraftCosts.Count>0 ? action : null);
     }
 

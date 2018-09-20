@@ -13,12 +13,11 @@ public class GenerateResources : MonoBehaviour {
     public float GenerateDelay;
     public IconSet IconsSet;
     public InventoryData Inventory;
-    int count = 0;
     public CraftEngine engine;
+    int BattleCount = 1;
+    public WelcomePanel welcome;
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(GenerateWorker());
-        
         var item_list = engine.GetItemsList();
         for(int i=0; i<item_list.Count; i++)
         {
@@ -33,11 +32,12 @@ public class GenerateResources : MonoBehaviour {
 
     public void Generate()
     {
-        count += Random.Range(MinCount, MaxCount);
+        StartCoroutine(GenerateWorker(BattleCount++, Random.Range(MinCount, MaxCount)));
     }
 
-    IEnumerator GenerateWorker()
+    IEnumerator GenerateWorker(int battle, int count)
     {
+        welcome.AddBattle(battle);
         while(true)
         {
             yield return new WaitForSeconds(GenerateDelay * Random.Range(0.8f, 1.0f));
@@ -52,6 +52,7 @@ public class GenerateResources : MonoBehaviour {
                 int resource_index = Random.Range(0, resources.Count);
                 var item = engine.GetItem(resources[resource_index]);
                 obj.GetComponent<Image>().sprite = IconsSet.Get(item.IconName);
+                welcome.AddGrindedRes(battle, resources[resource_index], 1);
                 Inventory.Add(resources[resource_index], 1);
                 ctr.Target = Target as RectTransform;
                 count--;

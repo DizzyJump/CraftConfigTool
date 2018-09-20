@@ -84,6 +84,8 @@
     <Compile Include="Assets\Scripts\Proto1\InventoryView.cs" />
     <Compile Include="Assets\Scripts\Proto1\ProtoDirector.cs" />
     <Compile Include="Assets\Scripts\Proto1\ResourceIconContorller.cs" />
+    <Compile Include="Assets\Scripts\Proto1\WelcomePanel.cs" />
+    <Compile Include="Assets\Scripts\Proto1\WelcomePanelOpener.cs" />
     <Compile Include="Assets\Scripts\Tests\Test.cs" />
     <Compile Include="Assets\Scripts\UiControls\AddResourcePanel.cs" />
     <Compile Include="Assets\Scripts\UiControls\ChooseIconInfo.cs" />
