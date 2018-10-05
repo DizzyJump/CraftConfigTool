@@ -10,6 +10,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public static ItemInfo itemBeingDragged;
     Transform startParent;
     Vector3 startPosition;
+    int startSublingIndex;
     public CraftEngine engine;
     public ErrorMessage Message;
 
@@ -18,6 +19,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         itemBeingDragged = Item;
         startPosition = DragTransform.position;
         transform.SetAsLastSibling();
+        startSublingIndex = Item.Anchor.GetSiblingIndex();
         Item.isNeedUpdate = false;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }

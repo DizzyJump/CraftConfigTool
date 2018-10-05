@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\UiControls\ChooseIconPanel.cs" />
     <Compile Include="Assets\Scripts\UiControls\CreateItemPanel.cs" />
     <Compile Include="Assets\Scripts\UiControls\ErrorMessage.cs" />
+    <Compile Include="Assets\Scripts\UiControls\ItemOrderChanger.cs" />
     <Compile Include="Assets\Scripts\UiControls\LoadButton.cs" />
     <Compile Include="Assets\Scripts\UiControls\MessagePanel.cs" />
     <Compile Include="Assets\Scripts\UiControls\SavePanel.cs" />

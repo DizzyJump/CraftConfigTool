@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: IconSet
   m_EditorClassIdentifier: 
   sprites:
+  - {fileID: 21300000, guid: 115eb2cb173b8694faabc341d3e6c8d4, type: 3}
+  - {fileID: 21300000, guid: 25099a74ed08f1d42a26c52cc42611ed, type: 3}
   - {fileID: 21300000, guid: a282c363a6b20484ebaf94a22bbe02f0, type: 3}
   - {fileID: 21300000, guid: ed857313e37514b4d976a82ec5e0b811, type: 3}
   - {fileID: 21300000, guid: 8efbde22588a2954ca73c3b0cb9a22ad, type: 3}

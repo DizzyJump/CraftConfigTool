@@ -22,7 +22,7 @@ public class ResourceCellDescriptor : MonoBehaviour {
 
     void SetupEx(string item_id, string res_id, Sprite sprite, string value, UnityAction action_on_delete)
     {
-        if(action_on_delete==null)
+        if(action_on_delete!=null)
         {
             DeleteButton.onClick.RemoveAllListeners();
             DeleteButton.onClick.AddListener(action_on_delete);

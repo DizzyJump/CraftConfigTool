@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 114606418265872776}
   - component: {fileID: 222311517347091622}
   - component: {fileID: 114097394852863090}
+  - component: {fileID: 114102042945035664}
   m_Layer: 5
   m_Name: space
   m_TagString: Untagged
@@ -332,6 +333,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114102042945035664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317855162160342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b955b225f2c11ae48a2febbfff6b89bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 
+  engine: {fileID: 11400000, guid: d811cedd4daf4a24e958e2d99239d689, type: 2}
+  Anchor: {fileID: 0}
 --- !u!114 &114107094635397930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,6 +922,7 @@ MonoBehaviour:
   engine: {fileID: 11400000, guid: d811cedd4daf4a24e958e2d99239d689, type: 2}
   ItemIdText: {fileID: 114805797186106598}
   ItemIcon: {fileID: 114107094635397930}
+  Anchor: {fileID: 0}
   Speed: 2000
   ID: 
   MessagEvent: {fileID: 11400000, guid: 3d84857efd6dd2d47804a4f58bb5e20f, type: 2}
@@ -918,6 +934,7 @@ MonoBehaviour:
   OnUpdateItemsEvent: {fileID: 11400000, guid: eebc7221537500048834de4966a561fa, type: 2}
   IconChangeEvent: {fileID: 11400000, guid: dd55aae2263f7fb42b529e99bdad48c3, type: 2}
   isNeedUpdate: 1
+  OrderChanger: {fileID: 114102042945035664}
 --- !u!114 &114709416426256294
 MonoBehaviour:
   m_ObjectHideFlags: 1

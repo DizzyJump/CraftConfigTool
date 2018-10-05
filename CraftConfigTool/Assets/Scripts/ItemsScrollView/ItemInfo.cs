@@ -8,7 +8,7 @@ public class ItemInfo : MonoBehaviour {
     public CraftEngine engine;
     public TMP_InputField ItemIdText;
     public Image ItemIcon;
-    Transform Anchor;
+    public Transform Anchor;
     public float Speed;
     public string ID;
     public ErrorMessage MessagEvent;
@@ -19,6 +19,7 @@ public class ItemInfo : MonoBehaviour {
     public EventObject OnUpdateItemsEvent;
     public ChooseIconInfo IconChangeEvent;
     public bool isNeedUpdate = true;
+    public ItemOrderChanger OrderChanger;
 	// Use this for initialization
 	void Start () {
 		
@@ -33,6 +34,7 @@ public class ItemInfo : MonoBehaviour {
     public void SetItem(string id)
     {
         ID = id;
+        OrderChanger.ID = ID;
         UpdateView();
     }
 
@@ -77,6 +79,7 @@ public class ItemInfo : MonoBehaviour {
     public void SetAnchor(Transform anchor)
     {
         Anchor = anchor;
+        OrderChanger.Anchor = Anchor;
     }
 
     public void OnChangeID()
