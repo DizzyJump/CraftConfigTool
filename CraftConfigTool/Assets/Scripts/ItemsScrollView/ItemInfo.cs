@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ItemInfo : MonoBehaviour {
     public CraftEngine engine;
     public TMP_InputField ItemIdText;
+    public TMP_InputField CraftTimeText;
     public Image ItemIcon;
     public Transform Anchor;
     public float Speed;
@@ -42,8 +43,18 @@ public class ItemInfo : MonoBehaviour {
     {
         var item = engine.GetItem(ID);
         ItemIdText.text = ID;
+        CraftTimeText.text = item.CraftTime.ToString();
+        UpdateCraftTimeTextColor();
         ItemIcon.sprite = Icons.Get(item.IconName);
         UpdateResources(item);
+    }
+
+    void UpdateCraftTimeTextColor()
+    {
+        var item = engine.GetItem(ID);
+        var colors = CraftTimeText.colors;
+        colors.disabledColor = item.CraftCosts.Count > 0 && item.CraftTime == 0 ? Color.red : Color.white;
+        CraftTimeText.colors = colors;
     }
 
     void UpdateResources(CraftItem item)
@@ -80,6 +91,13 @@ public class ItemInfo : MonoBehaviour {
     {
         Anchor = anchor;
         OrderChanger.Anchor = Anchor;
+    }
+
+    public void OnChangeCraftTime()
+    {
+        string new_time_str = CraftTimeText.text;
+        engine.SetCraftTime(ID, Mathf.Abs(System.Convert.ToInt32(new_time_str)));
+        UpdateCraftTimeTextColor();
     }
 
     public void OnChangeID()

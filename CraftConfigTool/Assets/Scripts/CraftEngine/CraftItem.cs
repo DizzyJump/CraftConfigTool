@@ -39,6 +39,12 @@ public class ChooseToCraftItemDescriptors : IItemDescriptors
 }
 
 [System.Serializable]
+public class FakeTankDescriptors : IItemDescriptors
+{
+
+}
+
+[System.Serializable]
 public class ItemDescriptors
 {
     [JsonProperty("unique")]
@@ -51,6 +57,8 @@ public class ItemDescriptors
     public TankUpgradeDescriptors TankUpgrade = null;
     [JsonProperty("choose_to_craft")]
     public ChooseToCraftItemDescriptors ChooseToCraft = null;
+    [JsonProperty("fake_tank")]
+    public FakeTankDescriptors FakeTank = null;
 }
 
 [System.Serializable]

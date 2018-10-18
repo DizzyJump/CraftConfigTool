@@ -33,6 +33,7 @@ public class ItemPlaceholder : MonoBehaviour {
         WorkItem = ItemsCache.Get(ID);
         WorkItem.SetAnchor(transform);
         WorkItem.UpdateView();
+        gameObject.SetActive(true);
     }
 
     public void Hide()
